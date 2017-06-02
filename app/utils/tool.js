@@ -10,8 +10,7 @@ import ImagePicker from 'react-native-image-picker';
 
 const Tool = {};
 
-Tool.fetch = (cmp, url, params, fn_succ, fn_fail, showLoading) => {
-  if(!showLoading)showLoading = true;
+Tool.fetch = (cmp, url, params, fn_succ, fn_fail) => {
   let keys = '';
   if(params){
     for(let k in params){
@@ -19,7 +18,7 @@ Tool.fetch = (cmp, url, params, fn_succ, fn_fail, showLoading) => {
     }
     keys = keys.substring(0,keys.length-1);
   }
-  cmp && showLoading && cmp.setState({ loading_visible: true })
+  cmp && cmp.setState({ loading_visible: true })
   return fetch(config.urlPath+url, {
     method: 'POST',
     headers: {
@@ -29,7 +28,7 @@ Tool.fetch = (cmp, url, params, fn_succ, fn_fail, showLoading) => {
   })
   .then( (response) => response.json() )
   .then( (result ) => {
-      cmp && showLoading && cmp.setState({ loading_visible: false })
+      cmp && cmp.setState({ loading_visible: false })
       if( result.code == 200 ){
         if(fn_succ && Tool.isFunction( fn_succ ))
           fn_succ.call(this, result.data);
@@ -47,7 +46,7 @@ Tool.fetch = (cmp, url, params, fn_succ, fn_fail, showLoading) => {
       return;
   })
   .catch((error) => {
-    cmp && showLoading && cmp.setState({ loading_visible: false })
+    cmp && cmp.setState({ loading_visible: false })
     setTimeout(()=>{
       Tool.alertLong('网络错误，信息提交失败');
     },1);

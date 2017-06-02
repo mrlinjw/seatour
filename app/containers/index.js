@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  ToastAndroid,
   Text,
-  Alert,
-  Button,
-  ScrollView,
+  Image,
   View
 } from 'react-native';
 
@@ -25,12 +22,13 @@ export default class Index extends Component {
 
 		}
 		onButtonPress(){
-				Actions.listview()
+		    Actions.listview()
 		}
 	  render() {
-       var self = this
-            container_view = <Text>page</Text>;
-      switch (this.state.page) {
+      let { page } = this.state,
+          self = this,
+          container_view = <Text>page</Text>;
+      switch (page) {
         case 1:
           container_view = <First/>;
           break;
@@ -42,14 +40,47 @@ export default class Index extends Component {
       }
 	    return (
         <View style={styles.container}>
-          <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
+          <Tabs selected={this.state.page}
+                style={{backgroundColor:'white'}}
+                selectedIconStyle={{borderRadius:5}}
                 selectedStyle={{color:'#00CFFF'}}
-                selectedIconStyle={{borderBottomWidth:2,borderBottomColor:'#00CFFF'}}
                 onSelect={el=>this.setState({page:el.props.name})}>
-              <Text name={1}>找线路</Text>
-              <Text name={2}>找船舶</Text>
-              <Text name={3}>我的</Text>
-              <Text name={4}>关于我们</Text>
+              <View name={1}>
+                <Image
+                  source={{uri:"https://haiyuexing.oss-cn-shenzhen.aliyuncs.com/pub/attachment/2017/05/08/152b32f8b54242a49e06ed7a4291b78b.jpg"}}
+                  style={ [styles.imagieIco, page==1 && styles.activeIco ] }/>
+                <Text
+                  style={ [styles.text, page==1 && styles.activeText ] }>
+                  找线路
+                </Text>
+              </View>
+              <View name={2}>
+                <Image
+                  source={{uri:"https://haiyuexing.oss-cn-shenzhen.aliyuncs.com/pub/attachment/2017/05/08/152b32f8b54242a49e06ed7a4291b78b.jpg"}}
+                  style={ [styles.imagieIco, page==2 && styles.activeIco ] }/>
+                <Text
+                  style={ [styles.text, page==2 && styles.activeText ] }>
+                  找船舶
+                </Text>
+              </View>
+              <View name={3}>
+                <Image
+                  source={{uri:"https://haiyuexing.oss-cn-shenzhen.aliyuncs.com/pub/attachment/2017/05/08/152b32f8b54242a49e06ed7a4291b78b.jpg"}}
+                  style={ [styles.imagieIco, page==3 && styles.activeIco ] }/>
+                <Text
+                  style={ [styles.text, page==3 && styles.activeText ] }>
+                  我的
+                </Text>
+              </View>
+              <View name={4}>
+                <Image
+                  source={{uri:"https://haiyuexing.oss-cn-shenzhen.aliyuncs.com/pub/attachment/2017/05/08/152b32f8b54242a49e06ed7a4291b78b.jpg"}}
+                  style={ [styles.imagieIco, page==4 && styles.activeIco ] }/>
+                <Text
+                  style={ [styles.text, page==4 && styles.activeText ] }>
+                  设置
+                </Text>
+              </View>
           </Tabs>
             <View style={styles.container_view}>
               {container_view}
@@ -71,5 +102,21 @@ const styles = StyleSheet.create({
     flex:1,
     marginBottom: 50,
     backgroundColor:"#F5FCFF"
+  },
+  imagieIco: {
+    width: 25,
+    height: 25,
+    marginBottom: 5,
+    alignSelf: 'center',
+  },
+  activeIco:{
+    borderRadius:5,
+  },
+  text: {
+    fontSize: 12,
+    alignSelf: 'center',
+  },
+  activeText:{
+    color:'#00cfff',
   },
 });
