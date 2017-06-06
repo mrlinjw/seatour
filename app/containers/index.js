@@ -42,8 +42,6 @@ export default class Index extends Component {
         <View style={styles.container}>
           <Tabs selected={this.state.page}
                 style={{backgroundColor:'white'}}
-                selectedIconStyle={{borderRadius:5}}
-                selectedStyle={{color:'#00CFFF'}}
                 onSelect={el=>this.setState({page:el.props.name})}>
               <View name={1}>
                 <Image

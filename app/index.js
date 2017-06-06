@@ -58,9 +58,12 @@ export default class Root extends Component {
 						titleStyle = {{color:'#00cfff'}}>
 					 	<Scene key='root' style={{paddingTop:64}}>
 				        	<Scene key='index' component={Index} title='index' initial={true}  />
-				        	<Scene key='first' component={First} title='first' />
-									<Scene key='listview' component={RouteList} title='listview' leftTitle='lasd'/>
-									<Scene key='mylistview' component={MyListView} title='mylistview'/>
+				        	<Scene key='first' hideNavBar={true} component={First} title='first' />
+									<Scene key='listview' component={RouteList} title='listview' backTitle='listview'
+									onRight={()=>{console.log(99);}}
+									rightButtonImage = {require('./img/menu_burger.png')}
+									/>
+									<Scene key='mylistview' component={MyListView} title='mylistview' backTitle='mylistview'/>
 									<Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical'/>
 				    </Scene>
 			    </Router>
