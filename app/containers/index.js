@@ -10,6 +10,7 @@ import Tabs from 'react-native-tabs';
 
 import First from './first';
 import ListView from './listview';
+import Map from './map';
 
 import {Actions} from 'react-native-router-flux'
 
@@ -34,6 +35,9 @@ export default class Index extends Component {
           break;
         case 2:
           container_view = <ListView/>;
+          break;
+        case 3:
+          container_view = <Map/>;
           break;
         default:
           container_view = <Text>other page+{this.state.page}</Text>;

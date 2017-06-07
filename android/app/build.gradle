@@ -126,6 +126,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-baidu-map')
     compile project(':RCTWeChat')
     compile project(':react-native-camera')
     compile project(':react-native-image-picker')
