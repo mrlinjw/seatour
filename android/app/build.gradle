@@ -104,11 +104,30 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
+    signingConfigs{
+        releaseConfig {
+            storeFile file ('../seatour.jks') //签名文件路径，
+            storePassword '123456' //密码
+            keyAlias 'key0'
+            keyPassword '123456'  //密码
+        }
+        debugConfig {
+            storeFile file ('../degug.keystroe') //签名文件路径，
+            storePassword 'android' //密码
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'  //密码
+        }
+    }
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.releaseConfig  // 配置release包的签名
         }
+        debug{
+            signingConfig signingConfigs.debugConfig // 配置debug包的签名
+        }
+
     }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
