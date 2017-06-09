@@ -9,6 +9,7 @@ import {
   Image,
   Dimensions,
   ScrollView,
+  TextInput,
   View
 } from 'react-native';
 import Loading from '../components/loading';
@@ -150,6 +151,12 @@ export default class First extends Component {
               <MyButton onPress = {this.pick.bind(this)}>
               选择图片
               </MyButton>
+              <TextInput
+                underlineColorAndroid='transparent'
+                selectionColor='#00cfff'
+                style={{height:40,borderColor:'gray', borderWidth:0.5, borderRadius:3, marginBottom:10,marginLeft:10,marginRight:10}}
+                placeholder="请输入"
+              />
               <Image source={this.state.imageUrl} style={{width:400,height:200}}/>
               <Text onPress={this.scan.bind(this)} style={{padding:20,margin:20}}>扫描</Text>
   	      </ScrollView>
