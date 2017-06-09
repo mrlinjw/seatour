@@ -112,7 +112,7 @@ android {
             keyPassword '123456'  //密码
         }
         debugConfig {
-            storeFile file ('../degug.keystroe') //签名文件路径，
+            storeFile file ('../debug.keystore') //签名文件路径，
             storePassword 'android' //密码
             keyAlias 'androiddebugkey'
             keyPassword 'android'  //密码

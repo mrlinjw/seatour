@@ -7,8 +7,7 @@ import init from './initialize/index';
 import SplashScreen from 'react-native-splash-screen';
 import * as wechat from 'react-native-wechat';
 
-import AppRoute from './route/route';
-
+import AppRoute from './route/route'
 
 const store = configureStore();
 init();
