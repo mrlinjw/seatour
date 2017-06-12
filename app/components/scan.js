@@ -16,7 +16,7 @@ import { Actions } from 'react-native-router-flux';
 const { width, height }  = Dimensions.get('window');
 
 /**
-*使用方法：too.to('scan',{callback: fn})
+*使用方法：tool.to('scan',{callback: fn})
 *fn为读取成功后回调函数
 */
 export default class Scan extends Component{
