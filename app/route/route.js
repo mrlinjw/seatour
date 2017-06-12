@@ -47,7 +47,7 @@ export default class AppRoute extends Component{
               rightButtonImage = {require('../img/menu_burger.png')}
             />
             <Scene key='mylistview' component={MyListView} title='mylistview' />
-            <Scene key='scan' component={Scan} title='二维码/条码' backTitle='取消' direction = 'vertical'/>
+            <Scene key='scan' component={Scan} title='二维码/条码' hideBackImage={true} backTitle='取消' direction = 'vertical'/>
         </Scene>
       </Router>
     )

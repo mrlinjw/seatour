@@ -25,6 +25,7 @@ import MyCalendar from '../components/calendar'
 const { width, height }  = Dimensions.get('window');
 import Button from 'apsl-react-native-button';
 import MyButton from '../components/button';
+import Rating from '../components/rating';
 
 export default class First extends Component {
 	constructor(props){
@@ -109,9 +110,12 @@ export default class First extends Component {
         });
       },3000)
     }
+    onRate(rate){
+      alert(rate)
+    }
 	  render() {
 	    return (
-        <View   style={styles.container}>
+        <View style={styles.container}>
   	      <ScrollView>
             <HTMLView
               value = '<p><a href="http://baidu.com">nice job!</a></p>'
@@ -122,6 +126,7 @@ export default class First extends Component {
 	           <Text style={styles.instructions}>
   	            welcome to haile, let us go fishing 66688
 	           </Text>
+             <Rating max={5} rating ={4} onRate = {this.onRate.bind(this)}/>
               <MyButton
                 onPress = { this.wechataciton.bind(this)} >
                 wechataciton
