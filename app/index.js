@@ -6,7 +6,7 @@ import config from './utils/config';
 import init from './initialize/index';
 
 import SplashScreen from 'react-native-splash-screen';
-import * as wechat from 'react-native-wechat';
+import {registerApp} from 'react-native-wechat';
 
 import AppRoute from './route/route'
 
@@ -18,7 +18,7 @@ export default class Root extends Component {
 		super(props);
 	}
 	componentWillMount(){
-		wechat.registerApp(config.wechatAppID);
+		registerApp(config.wechatAppID);
 	}
 	componentDidMount(){
 		SplashScreen.hide();

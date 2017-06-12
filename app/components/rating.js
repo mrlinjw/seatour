@@ -56,7 +56,7 @@ export default class Rating extends Component {
                 style={{height: iconHeight, width: iconWidth}}
                 onPress={()=>this._onRate(i)}
                 >
-                <Image style={{height: iconHeight, width: iconWidth}} source={rating >= i ? iconSelected : iconUnselected}/>
+                <Image style={{height: iconHeight, width: iconWidth, marginLeft:5}} source={rating >= i ? iconSelected : iconUnselected}/>
               </TouchableWithoutFeedback>)
         }
         return (
