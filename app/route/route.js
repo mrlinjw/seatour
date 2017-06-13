@@ -3,6 +3,7 @@ import{
 	Alert,
 	BackAndroid,
 	ToastAndroid,
+	Platform
 }from 'react-native';
 
 import {Scene, Router, ActionConst} from 'react-native-router-flux';
@@ -39,7 +40,7 @@ export default class AppRoute extends Component{
         backButtonImage = {require('../img/back_chevron.png')}
         direction = 'horizontal'
         titleStyle = {{color:'#00cfff'}}>
-        <Scene key='root' style={{paddingTop:64}}>
+        <Scene key='root' style={{paddingTop:Platform.OS === 'ios' ? 64 : 54}}>
             <Scene key='index' component={Index} title='index' initial={true}  />
             <Scene key='first' hideNavBar={true} component={First} title='first' />
             <Scene key='listview' component={RouteList} title='listview' backTitle='back'
