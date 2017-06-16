@@ -8,11 +8,11 @@
   },
   "dependencies": {
     "apsl-react-native-button": "^3.0.2",
-    "react": "~15.4.0",
-    "react-native": "0.41.2",
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.44.0",
     "react-native-baidu-map": "^0.6.0",
     "react-native-calendars": "^1.2.16",
-    "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
+    "react-native-camera": "^0.9.4",
     "react-native-htmlview": "^0.9.0",
     "react-native-image-picker": "^0.26.3",
     "react-native-loading-spinner-overlay": "^0.4.4",
@@ -27,9 +27,9 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
-    "babel-jest": "19.0.0",
-    "babel-preset-react-native": "1.9.1",
-    "jest": "19.0.2",
+    "babel-jest": "20.0.3",
+		"babel-preset-react-native": "2.0.0",
+		"jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.6",
     "redux-devtools": "^3.3.2",
     "redux-devtools-dock-monitor": "^1.1.1",
