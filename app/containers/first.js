@@ -127,10 +127,14 @@ export default class First extends Component {
   	            welcome to haile, let us go fishing 66688
 	           </Text>
              <Rating max={5} rating ={4} onRate = {this.onRate.bind(this)}/>
+             <MyButton
+               onPress = { ()=>{Tool.to('login')}} >
+               login
+             </MyButton>
               <MyButton
                 onPress = { this.wechataciton.bind(this)} >
                 wechataciton
-                </MyButton>
+              </MyButton>
               <Carousel
                 delay={3000}
                 style={this.state.size}

@@ -13,7 +13,7 @@ export default class Index extends Component {
 	}
 	componentWillMount(){
 		let me = this;
-		me.setState({firstTime: true});
+		// me.setState({firstTime: true});
 		// StorageUtil.load('firstTime',(ret)=>{
 		// 	if(ret===null || ret==='undefined'){
 		// 		StorageUtil.save('firstTime',false);

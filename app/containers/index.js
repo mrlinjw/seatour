@@ -53,7 +53,7 @@ export default class Index extends Component {
                   style={ [styles.imagieIco, page==1 && styles.activeIco ] }/>
                 <Text
                   style={ [styles.text, page==1 && styles.activeText ] }>
-                  找线路
+                  首页
                 </Text>
               </View>
               <View name={2}>
@@ -62,7 +62,7 @@ export default class Index extends Component {
                   style={ [styles.imagieIco, page==2 && styles.activeIco ] }/>
                 <Text
                   style={ [styles.text, page==2 && styles.activeText ] }>
-                  找船舶
+                  社区
                 </Text>
               </View>
               <View name={3}>
@@ -71,7 +71,7 @@ export default class Index extends Component {
                   style={ [styles.imagieIco, page==3 && styles.activeIco ] }/>
                 <Text
                   style={ [styles.text, page==3 && styles.activeText ] }>
-                  我的
+                  地图
                 </Text>
               </View>
               <View name={4}>
@@ -80,7 +80,16 @@ export default class Index extends Component {
                   style={ [styles.imagieIco, page==4 && styles.activeIco ] }/>
                 <Text
                   style={ [styles.text, page==4 && styles.activeText ] }>
-                  设置
+                  天气
+                </Text>
+              </View>
+              <View name={5}>
+                <Image
+                  source={{uri:"https://haiyuexing.oss-cn-shenzhen.aliyuncs.com/pub/attachment/2017/05/08/152b32f8b54242a49e06ed7a4291b78b.jpg"}}
+                  style={ [styles.imagieIco, page==5 && styles.activeIco ] }/>
+                <Text
+                  style={ [styles.text, page==5 && styles.activeText ] }>
+                  我的
                 </Text>
               </View>
           </Tabs>

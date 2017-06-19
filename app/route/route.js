@@ -17,6 +17,9 @@ import MyListView from '../containers/listview';
 import RouteList from '../containers/routelist';
 import Scan from '../components/scan';
 
+//登录
+import Login from '../containers/login/login'
+
 export default class AppRoute extends Component{
   constructor(props){
     super(props);
@@ -48,7 +51,8 @@ export default class AppRoute extends Component{
         titleStyle = {{color:'#00cfff'}}>
         <Scene key='root' style={{}} passProps={true} hideNavBar = {false} style = {styles.scenStyle}>
 					<Scene key='index' component={Index} title='index' hideBackImage={true} />
-          <Scene key='first' hideNavBar={true} component={First} title='first' />
+					<Scene key='login' component={Login} title='登录' />
+					<Scene key='first' hideNavBar={true} component={First} title='first' />
           <Scene key='listview' component={RouteList}
 						title='listview'
 						backTitle='back'
