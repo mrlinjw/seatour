@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import{
+	StyleSheet,
 	Alert,
 	BackAndroid,
 	ToastAndroid,
 	Platform
 }from 'react-native';
 
-import {Scene, Router, ActionConst} from 'react-native-router-flux';
+import {Actions, Scene, Router, ActionConst} from 'react-native-router-flux';
+
+import StorageUtil from '../utils/storage-util';
 
 import Index from '../containers/index';
 import First from '../containers/first';
@@ -18,6 +21,9 @@ export default class AppRoute extends Component{
   constructor(props){
     super(props);
   }
+	componentWillMount(){
+		let me = this;
+	}
   onExitApp(){
     // Alert.alert('提示','是否提出海约行',[
     // 	{text:'取消',onPress: ()=> {return false}},
@@ -40,20 +46,27 @@ export default class AppRoute extends Component{
         backButtonImage = {require('../img/back_chevron.png')}
         direction = 'horizontal'
         titleStyle = {{color:'#00cfff'}}>
-        <Scene key='root' style={{paddingTop:Platform.OS === 'ios' ? 64 : 54}}>
-            <Scene key='index' component={Index} title='index' initial={true}  />
-            <Scene key='first' hideNavBar={true} component={First} title='first' />
-            <Scene key='listview' component={RouteList} title='listview' backTitle='back'
-              onRight={()=>{console.log(99);}}
-              rightButtonImage = {require('../img/menu_burger.png')}
-            />
-            <Scene key='mylistview' component={MyListView} title='mylistview' />
-            <Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical'/>
+        <Scene key='root' style={{}} passProps={true} hideNavBar = {false} style = {styles.scenStyle}>
+					<Scene key='index' component={Index} title='index' hideBackImage={true} />
+          <Scene key='first' hideNavBar={true} component={First} title='first' />
+          <Scene key='listview' component={RouteList}
+						title='listview'
+						backTitle='back'
+            onRight={()=>{console.log(99);}}
+            rightButtonImage = {require('../img/menu_burger.png')}
+          />
+          <Scene key='mylistview' component={MyListView} title='mylistview' />
+          <Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical'/>
         </Scene>
       </Router>
     )
   }
 }
+const styles = StyleSheet.create({
+	scenStyle: {
+		paddingTop:Platform.OS === 'ios' ? 64 : 54
+	}
+})
 
 //hideNavBar hideTabBar
 //Actions.key(params),进行跳转，key替换为对应的key名称

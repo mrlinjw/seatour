@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 
-import { Provider } from 'react-redux';
-import configureStore from './store/store';
-import config from './utils/config';
-import init from './initialize/index';
-
-import SplashScreen from 'react-native-splash-screen';
-import {registerApp} from 'react-native-wechat';
-
+import StorageUtil from './utils/storage-util';
+import Guide from './containers/guide';
 import AppRoute from './route/route'
 
-const store = configureStore();
-init();
-
-export default class Root extends Component {
+export default class Index extends Component {
 	constructor(props){
 		super(props);
+		this.state = {
+			firstTime: false
+		}
 	}
 	componentWillMount(){
-		registerApp(config.wechatAppID);
-	}
-	componentDidMount(){
-		SplashScreen.hide();
+		let me = this;
+		me.setState({firstTime: true});
+		// StorageUtil.load('firstTime',(ret)=>{
+		// 	if(ret===null || ret==='undefined'){
+		// 		StorageUtil.save('firstTime',false);
+		// 		me.setState({firstTime: true});
+		// 	}
+		// 	else
+		// 		StorageUtil.save('firstTime',false);
+		// })
 	}
 	render(){
-		return(
-			<Provider store={store}>
-				<AppRoute/>
-			</Provider>
-		)
+		let { firstTime } = this.state;
+		if(firstTime)
+			return <Guide callback = { ()=>{ this.setState({firstTime:false})} }/>
+		else
+			return <AppRoute/>
 	}
 }
