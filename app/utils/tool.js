@@ -140,6 +140,7 @@ Tool.alert = (content, isAlert) => {
 }
 
 Tool.alertShort = (content, isAlert) => {
+  if(!content)content = '未知错误'
   if(isAlert || Platform.OS === 'ios')
     Alert.alert('提示', content.toString())
   else
@@ -147,6 +148,7 @@ Tool.alertShort = (content, isAlert) => {
 }
 
 Tool.alertLong = (content, isAlert) => {
+  if(!content)content = '未知错误'
   if(isAlert || Platform.OS === 'ios')
     Alert.alert('提示', content.toString())
   else
