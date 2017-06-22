@@ -11,8 +11,8 @@ import {Actions, Scene, Router, ActionConst} from 'react-native-router-flux';
 
 import StorageUtil from '../utils/storage-util';
 
-import Index from '../containers/index';
-import First from '../containers/first';
+import Test from '../containers/test';
+import IndexTabs from '../containers/index-tabs';
 import MyListView from '../containers/listview';
 import RouteList from '../containers/routelist';
 import Scan from '../components/scan';
@@ -51,10 +51,10 @@ export default class AppRoute extends Component{
         direction = 'horizontal'
         titleStyle = {{color:'#00cfff'}}>
         <Scene key='root' style={{}} passProps={true} hideNavBar = {false} style = {styles.scenStyle}>
-					<Scene key='index' component={Index} title='index' hideBackImage={true} initial = {true}/>
+					<Scene key='indexTabs' component={IndexTabs} title='海约行' hideBackImage={true} initial = {true}/>
+					<Scene key='test' component={Test} title='test'/>
 					<Scene key='login' component={Login} title='登录'  />
 					<Scene key='resetPass' component={ResetPass} title='重置密码'/>
-					<Scene key='first' hideNavBar={true} component={First} title='first' />
           <Scene key='listview' component={RouteList}
 						title='listview'
 						backTitle='back'

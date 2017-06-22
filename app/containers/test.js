@@ -27,7 +27,7 @@ import Button from 'apsl-react-native-button';
 import MyButton from '../components/button';
 import Rating from '../components/rating';
 
-export default class First extends Component {
+export default class Test extends Component {
 	constructor(props){
 			super(props);
       let now = new Date();
@@ -81,7 +81,7 @@ export default class First extends Component {
     }
     async wechataciton(){
       //wechat.openWXApp();
-      let result = "await"; 
+      let result = "await";
       wechat.shareToSession({
         type: 'imageResource',
         title: 'resource image',

@@ -26,9 +26,7 @@ export default class Login extends Component{
     }
   }
   componentWillUnmount(){
-    if(interval!=null){
-      clearInterval(interval);
-    }
+      interval && clearInterval(interval);
   }
   changeLoginType(){
     let { loginType } = this.state;
