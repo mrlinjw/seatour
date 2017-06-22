@@ -91,7 +91,7 @@ export default class Index extends Component {
                   </Text>
                 </TouchableOpacity>
               </View>
-
+              {/*活动*/}
               <View style={ styles.fnMoudle }>
                 <View style={ styles.titleView }>
                   <Text>人气活动</Text>
@@ -107,7 +107,7 @@ export default class Index extends Component {
                   }
                 />
               </View>
-
+              {/*热门线路*/}
               <View style={ styles.fnMoudle }>
                 <View style={ styles.titleView }>
                   <Text>热门线路</Text>
@@ -122,7 +122,7 @@ export default class Index extends Component {
                   }
                 />
               </View>
-
+              {/*文章分享*/}
               <View style={ [styles.fnMoudle,{ borderBottomWidth: 0} ]}>
                 <View style={ styles.titleView }>
                   <Text>文章分享</Text>
