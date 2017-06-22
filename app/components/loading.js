@@ -20,9 +20,13 @@ export default class Loading extends Component{
     })
   }
   render(){
-    return (<Spinner
-              visible={this.props.visible}
-              textContent={"数据加载中..."}
-              textStyle={{color: '#FFF',fontSize:12}} />)
+    return (
+      <Spinner
+          visible={this.props.visible}
+          textContent={"数据加载中..."}
+          overlayColor='transparent'
+          color='#00cfff'
+          textStyle={{color: '#00cfff',fontSize:12}} />
+      )
   }
 }

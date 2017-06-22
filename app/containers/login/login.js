@@ -12,6 +12,8 @@ import {
 import MyButton from '../../components/button';
 import Tool from '../../utils/tool';
 
+let interval = null;
+
 export default class Login extends Component{
   constructor(props) {
     super(props);
@@ -21,6 +23,11 @@ export default class Login extends Component{
       showLoginName: '密码登录',
       isGetYzm: false,
       second: 30,
+    }
+  }
+  componentWillUnmount(){
+    if(interval!=null){
+      clearInterval(interval);
     }
   }
   changeLoginType(){
@@ -40,7 +47,7 @@ export default class Login extends Component{
   getYzm(){
     let me = this;
     me.setState({isGetYzm: true});
-    let interval = setInterval(()=>{
+    interval = setInterval(()=>{
       let{ second } = me.state;
       console.log(second);
       if(second>0){

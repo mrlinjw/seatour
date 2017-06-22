@@ -81,7 +81,8 @@ export default class First extends Component {
     }
     async wechataciton(){
       //wechat.openWXApp();
-      let result = await wechat.shareToSession({
+      let result = "await"; 
+      wechat.shareToSession({
         type: 'imageResource',
         title: 'resource image',
         description: 'share resource image to time line',
