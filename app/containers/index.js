@@ -45,6 +45,13 @@ export default class Index extends Component {
     search(type){
       console.log(type)
     }
+    gethd(){
+      let { ativities ,size} = this.state;
+      let result = ativities.map((img,index)=>{
+        return(<Image source={{uri:img.img}} style={size}/>)
+      })
+      return result;
+    }
 	  render() {
 	    return (
         <View style={styles.container}>
@@ -57,9 +64,7 @@ export default class Index extends Component {
                 bullets = {true}
                 onAnimateNextPage={(p) => {}}
                 >
-                <Image source={this.state.imageUrl} style={this.state.size}/>
-                <Image source={this.state.imageUrl} style={this.state.size}/>
-                <Image source={this.state.imageUrl} style={this.state.size}/>
+                {this.gethd()}
               </Carousel>
 
               <View style={[styles.fnMoudle,{ flexDirection:'row' }]}>

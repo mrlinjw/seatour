@@ -82,15 +82,17 @@ export default class Test extends Component {
     async wechataciton(){
       //wechat.openWXApp();
       let result = "await";
-      wechat.shareToSession({
-        type: 'imageResource',
-        title: 'resource image',
-        description: 'share resource image to time line',
-        mediaTagName: 'email signature',
-        messageAction: undefined,
-        messageExt: undefined,
-        imageUrl: this.state.imageUrl.uri
-      });
+      // wechat.shareToSession({
+      //   type: 'imageResource',
+      //   title: 'resource image',
+      //   description: 'share resource image to time line',
+      //   mediaTagName: 'email signature',
+      //   messageAction: undefined,
+      //   messageExt: undefined,
+      //   imageUrl: this.state.imageUrl.uri
+      // });
+      wechat.sendAuthRequest("snsapi_userinfo",'haiyue');
+
       console.log('share resource image to time line successful', result);
     }
     toggleCalendar(){
@@ -157,6 +159,12 @@ export default class Test extends Component {
                 type = {2}
   	          >
               列表页面
+              </MyButton>
+              <MyButton
+  	          	onPress={()=>{Tool.to('listview')}}
+                type = {2}
+  	          >
+              listview
               </MyButton>
               <MyButton onPress = {this.pick.bind(this)}>
               选择图片

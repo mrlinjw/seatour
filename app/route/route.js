@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import{
 	StyleSheet,
+	Image,
+	TextInput,
 	Alert,
 	BackAndroid,
 	ToastAndroid,
@@ -51,7 +53,11 @@ export default class AppRoute extends Component{
         direction = 'horizontal'
         titleStyle = {{color:'#00cfff'}}>
         <Scene key='root' style={{}} passProps={true} hideNavBar = {false} style = {styles.scenStyle}>
-					<Scene key='indexTabs' component={IndexTabs} title='海约行' hideBackImage={true} initial = {true}/>
+					<Scene key='indexTabs' component={IndexTabs}
+						title='海约行'
+						hideBackImage={true}
+						initial = {true}
+					/>
 					<Scene key='test' component={Test} title='test'/>
 					<Scene key='login' component={Login} title='登录'  />
 					<Scene key='resetPass' component={ResetPass} title='重置密码'/>
@@ -60,6 +66,7 @@ export default class AppRoute extends Component{
 						backTitle='back'
             onRight={()=>{console.log(99);}}
             rightButtonImage = {require('../img/menu_burger.png')}
+						renderTitle={()=>{return <TextInput placeholder='ss' style={{ height: 40, marginTop: 20, width: 200,alignSelf:'center', justifyContent:'center',alignItems:'center', borderWidth:0.5, borderColor:'gray', borderRadius:20}}/>}}
           />
           <Scene key='mylistview' component={MyListView} title='mylistview' />
           <Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical'/>
