@@ -45,10 +45,21 @@ export default class Index extends Component {
     search(type){
       console.log(type)
     }
+    getText(){
+      let { articles } = this.state;
+      let result = articles.map((article,index)=>{
+        return(
+          <Text key={index} style={{ width: width, height: 30, lineHeight: 30, textAlign: 'center'}} onPress={()=>{alert(index)}}>
+          {article.title}
+          </Text>
+        )
+      })
+      return result;
+    }
     gethd(){
       let { ativities ,size} = this.state;
       let result = ativities.map((img,index)=>{
-        return(<Image source={{uri:img.img}} style={size}/>)
+        return(<Image source={{uri:img.img}} style={size} key={index}/>)
       })
       return result;
     }
@@ -98,6 +109,13 @@ export default class Index extends Component {
               </View>
               {/*活动*/}
               <View style={ styles.fnMoudle }>
+                <Carousel
+                  delay={4000}
+                  style={{width: width, height: 30}}
+                  autoplay
+                  >
+                  {this.getText()}
+                </Carousel>
                 <View style={ styles.titleView }>
                   <Text>人气活动</Text>
                   <Text style = { styles.titleMore } onPress={ ()=>console.log('more') }>更多</Text>

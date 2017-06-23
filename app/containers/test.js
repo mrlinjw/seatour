@@ -91,8 +91,9 @@ export default class Test extends Component {
       //   messageExt: undefined,
       //   imageUrl: this.state.imageUrl.uri
       // });
-      wechat.sendAuthRequest("snsapi_userinfo",'haiyue');
-
+      wechat.sendAuthRequest("snsapi_userinfo",'haiyue').then(ret=>{
+          console.log(ret);
+      });
       console.log('share resource image to time line successful', result);
     }
     toggleCalendar(){

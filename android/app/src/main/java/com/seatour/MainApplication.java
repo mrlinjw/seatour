@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.theweflex.react.WeChatPackage;
+import com.remobile.marqueeLabel.RCTMarqueeLabelPackage;
+import com.theweflex.react.WeChatPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.cboy.rn.splashscreen.SplashScreenReactPackage;
 import com.facebook.react.ReactNativeHost;
