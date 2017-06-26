@@ -12,6 +12,7 @@ import Test from './test';
 import Index from './index';
 import ListView from './listview';
 import Map from './map';
+import Personal from './personal/index';
 
 import {Actions} from 'react-native-router-flux'
 
@@ -42,6 +43,9 @@ export default class IndexTabs extends Component {
           break;
           case 4:
             container_view = <Test/>;
+            break;
+          case 5:
+            container_view = <Personal/>;
             break;
         default:
           container_view = <Text>other page+{this.state.page}</Text>;
