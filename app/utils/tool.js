@@ -36,7 +36,7 @@ Tool.fetch = (cmp, url, params, fn_succ) => {
     body: keys
   })
   .then( (response) => {
-    response.json()
+    return response.json();
   } )
   .then( (result ) => {
       cmp && cmp.setState({ loading_visible: false })
