@@ -22,7 +22,14 @@ Tool.fetch = (cmp, url, params, fn_succ) => {
   let keys = '';
   if(params){
     for(let k in params){
-      keys += k+'='+params[k]+'&'
+      let p = params[k];
+      if(Tool.isArray(p)){
+        p.map((v,i)=>{
+          keys += k+'['+i+']='+v+'&';
+        })
+      }else{
+        keys += k+'='+p+'&';
+      }
     }
     keys = keys.substring(0,keys.length-1);
   }

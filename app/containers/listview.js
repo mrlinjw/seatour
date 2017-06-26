@@ -36,7 +36,7 @@ export default class MyListView extends Component{
 		} = this.state,
 		me = this;
 		this.setState({visible:true})
-		Tool.fetch(this, 'wechat/route/list', null, function(ret){
+		Tool.fetch(this, 'wechat/route/list', {type:[1,2],name:'test'}, function(ret){
 			let newDataSource = datas.concat(ret.pageData);
 			me.setState({
 				visible: false,
