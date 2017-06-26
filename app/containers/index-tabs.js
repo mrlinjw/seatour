@@ -41,10 +41,10 @@ export default class IndexTabs extends Component {
         case 3:
           container_view = <Map/>;
           break;
-          case 4:
+        case 4:
             container_view = <Test/>;
             break;
-          case 5:
+        case 5:
             container_view = <Personal/>;
             break;
         default:
