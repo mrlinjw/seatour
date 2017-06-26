@@ -59,27 +59,26 @@ export default class Personal extends Component{
 
           <View style={ styles.order}>
             <TouchableOpacity>
-              <View>
-                <Image source={require('../../img/logo.png')} style={styles.orderImg}>
-                  <Text style={styles.bagde}>2</Text>
-                </Image>
+              <View style={ styles.orderItem }>
+                <Image source={require('../../img/logo.png')} style={styles.orderImg} />
+                <Text style={styles.bagde}>2</Text>
                 <Text>待支付</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity>
-              <View>
+              <View style={ styles.orderItem }>
                 <Image source={require('../../img/logo.png')} style={styles.orderImg}></Image>
                 <Text>待出行</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity>
-              <View>
+              <View style={ styles.orderItem }>
                 <Image source={require('../../img/logo.png')} style={styles.orderImg}></Image>
                 <Text>待评价</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity>
-              <View>
+              <View style={ styles.orderItem }>
                 <Image source={require('../../img/logo.png')} style={styles.orderImg}></Image>
                 <Text>退款</Text>
               </View>
@@ -130,16 +129,24 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     justifyContent: 'space-around',
     alignItems: 'center',
+    paddingTop: -5,
+    paddingRight: -5,
+  },
+  orderItem:{
+    padding: 5,
   },
   orderImg: {
     width: 40,
     height: 40,
   },
   bagde: {
-    alignSelf:'flex-end',
+    position: 'absolute',
+    top: 0,
+    right: 0,
     textAlign: 'center',
     width: 16,
     height: 16,
+    lineHeight: 16,
     borderRadius: 8,
     backgroundColor: 'red',
     color: '#fff',
