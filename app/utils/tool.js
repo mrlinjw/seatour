@@ -10,7 +10,15 @@ import ImagePicker from 'react-native-image-picker';
 
 const Tool = {};
 
-Tool.fetch = (cmp, url, params, fn_succ, fn_fail) => {
+/**
+ * [fetch description]
+ * @param  {[type]} cmp        [请求页面容器，主要用于显示loading加载框，传null时不显示加载框，加载款必须为	<Loading  visible={this.state.loading_visible}]  />]
+ * @param  {[type]} url        [请求地址]
+ * @param  {[type]} params     [参数]
+ * @param  {[type]} fn_succ    [成功回调]
+ * @return {[type]}            [description]
+ */
+Tool.fetch = (cmp, url, params, fn_succ) => {
   let keys = '';
   if(params){
     for(let k in params){
@@ -21,12 +29,15 @@ Tool.fetch = (cmp, url, params, fn_succ, fn_fail) => {
   cmp && cmp.setState({ loading_visible: true })
   return fetch(config.urlPath+url, {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: keys
   })
-  .then( (response) => response.json() )
+  .then( (response) => {
+    response.json()
+  } )
   .then( (result ) => {
       cmp && cmp.setState({ loading_visible: false })
       if( result.code == 200 ){
@@ -46,6 +57,7 @@ Tool.fetch = (cmp, url, params, fn_succ, fn_fail) => {
       return;
   })
   .catch((error) => {
+    //这里loading跟alert都用到了modal框，使用setTimeout重置代码序列，保证同步执行
     cmp && cmp.setState({ loading_visible: false })
     setTimeout(()=>{
       Tool.alertLong('网络错误，信息提交失败');
