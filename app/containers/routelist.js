@@ -5,6 +5,7 @@ import{
 	ListView,
 	View,
 	TouchableOpacity,
+	TextInput,
 	Image,
 	Text
 } from 'react-native';
@@ -34,6 +35,33 @@ class RouteList extends Component{
 		} = this.props;
 		if(Tool.isEmpty(list))
 			dispatch(loadList(this,list,params));
+	}
+	componentDidMount() {
+			let me = this;
+	    Actions.refresh({
+	        leftTitle: 'back',
+	        onLeft: () => {
+	            // TODO 相关操作
+	        },
+	        onRight: () => {
+	            alert('right press')
+	        },
+					renderTitle:()=>{
+						let s = { height: 40, marginTop: 20, width: 200,alignSelf:'center', justifyContent:'center',alignItems:'center', borderWidth:0.5, borderColor:'gray', borderRadius:20};
+						return <TextInput
+							placeholder='ss' style={s}
+							returnKeyType = 'search'
+							onChangeText = {(text)=>{
+								me.setState({
+									text: text
+								})
+							}}
+							onSubmitEditing = {(a,b,c)=>{
+								alert(me.state.text)}
+							}
+						/>
+					}
+	    });
 	}
 	loadFirst(){
 		let {

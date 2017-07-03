@@ -28,14 +28,17 @@ export default class Map extends Component{
       trafficEnabled: false,
       baiduHeatMapEnabled: false,
       markers: [{
+        itemId: '13',
         longitude: 113.309315,
         latitude: 23.13427,
         title: "气象局"
       },{
+        itemId: 46,
         longitude: 113.313636,
         latitude: 23.135037,
         title: "后勤中心"
       },{
+        itemId: 168,
         longitude: 113.309858,
         latitude: 23.132543,
         title: "育才中学"

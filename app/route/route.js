@@ -66,7 +66,6 @@ export default class AppRoute extends Component{
 						backTitle='back'
             onRight={()=>{console.log(99);}}
             rightButtonImage = {require('../img/menu_burger.png')}
-						renderTitle={()=>{return <TextInput placeholder='ss' style={{ height: 40, marginTop: 20, width: 200,alignSelf:'center', justifyContent:'center',alignItems:'center', borderWidth:0.5, borderColor:'gray', borderRadius:20}}/>}}
           />
           <Scene key='mylistview' component={MyListView} title='mylistview' />
           <Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical'/>
