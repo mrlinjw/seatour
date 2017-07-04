@@ -12,6 +12,7 @@ import Test from './test';
 import Index from './index';
 import ListView from './listview';
 import Map from './map';
+import SeaWebView from './webview';
 import Personal from './personal/index';
 
 import {Actions} from 'react-native-router-flux'

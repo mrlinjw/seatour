@@ -162,7 +162,7 @@ export default class Test extends Component {
               列表页面
               </MyButton>
               <MyButton
-  	          	onPress={()=>{Tool.to('listview')}}
+  	          	onPress={()=>{Tool.to('seawebview')}}
                 type = {2}
   	          >
               listview

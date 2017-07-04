@@ -18,6 +18,8 @@ import IndexTabs from '../containers/index-tabs';
 import MyListView from '../containers/listview';
 import RouteList from '../containers/routelist';
 import Scan from '../components/scan';
+import SeaWebView from '../containers/webview';
+
 
 //登录
 import Login from '../containers/login/login'
@@ -67,7 +69,8 @@ export default class AppRoute extends Component{
             onRight={()=>{console.log(99);}}
             rightButtonImage = {require('../img/menu_burger.png')}
           />
-          <Scene key='mylistview' component={MyListView} title='mylistview' />
+					<Scene key='mylistview' component={MyListView} title='mylistview' />
+					<Scene key='seawebview' component={SeaWebView} title='h5页面' />
           <Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical'/>
         </Scene>
       </Router>
