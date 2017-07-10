@@ -159,13 +159,13 @@ export default class Test extends Component {
   	          	onPress={this.onButtonPress.bind(this)}
                 type = {2}
   	          >
-              webview
+              routelist
               </MyButton>
               <MyButton
   	          	onPress={ ()=>{ Tool.to('seawebview', {url: config.pagePath+'lineList'}) } }
                 type = {2}
   	          >
-              listview
+              webview
               </MyButton>
               <MyButton onPress = {this.pick.bind(this)}>
               选择图片
