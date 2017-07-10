@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import{
   StyleSheet,
   Dimensions,
-  View
+  View,
+  Text
 }from 'react-native';
 
 import {
@@ -11,6 +12,8 @@ import {
   MapModule,
   Geolocation
 } from 'react-native-baidu-map';
+
+import Tool from '../utils/tool';
 
 const width =  Dimensions.get('window').width;
 const height =  Dimensions.get('window').height;
@@ -64,6 +67,12 @@ export default class Map extends Component{
             //alert('map click')
           }}
         >
+        <View style={ [styles.top, styles.floatView ] }>
+          <Text onPress={ ()=>Tool.back()}>back</Text>
+        </View>
+        <View style={ [styles.bottom, styles.floatView ]}>
+          <Text>bottom</Text>
+        </View>
         </MapView>
       </View>
     )
@@ -82,5 +91,21 @@ const styles = StyleSheet.create({
     width: width,
     height: height,
     marginBottom: 16
+  },
+  floatView: {
+    position: 'relative',
+    backgroundColor: '#fff',
+    width: width - 60,
+    height: 50,
+    marginLeft: 30,
+    marginRight: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  top: {
+    marginTop: 30,
+  },
+  bottom: {
+    marginTop: height - 130,
   }
 })
