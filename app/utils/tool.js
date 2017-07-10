@@ -35,7 +35,7 @@ Tool.fetch = (cmp, url, params, fn_succ) => {
   }
   cmp && cmp.setState({ loading_visible: true })
   return fetch(config.urlPath+url, {
-    method: 'POST',
+    method: 'GET',
     credentials: 'include',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -43,10 +43,10 @@ Tool.fetch = (cmp, url, params, fn_succ) => {
     body: keys
   })
   .then( (response) => {
+    cmp && cmp.setState({ loading_visible: false })
     return response.json();
   } )
   .then( (result ) => {
-      cmp && cmp.setState({ loading_visible: false })
       if( result.code == 200 ){
         if(fn_succ && Tool.isFunction( fn_succ ))
           fn_succ.call(this, result.data);
@@ -174,27 +174,15 @@ Tool.alertLong = (content, isAlert) => {
     ToastAndroid.show(content.toString(), ToastAndroid.LONG)
 }
 
-
-Tool.isObject = (obj) => {
-    return typeof(obj) == 'object' && Object.prototype.toString.call(obj).toLowerCase() === '[object object]' && !obj.length; //true 是 false不是
-}
-
 Tool.isArray = (arr) => {
     return Object.prototype.toString.call(arr).toLowerCase() === '[object array]';
 }
 
-Tool.isBoolean = function(v){
-    return typeof v === 'boolean';
-}
 Tool.isFunction = function(v){
     return Object.prototype.toString.apply(v) === '[object Function]';
 }
 Tool.isEmpty = function(v, allowBlank) {
     return v === null || v === undefined || ((Tool.isArray(v) && !v.length)) || (!allowBlank ? v === '' : false);
-}
-
-Tool.isNumber = function( v ){
-    return typeof parseInt( v ) === 'number';
 }
 
 /**
