@@ -11,7 +11,6 @@ import Tabs from 'react-native-tabs';
 import Test from './test';
 import Index from './index';
 import ListView from './listview';
-import Map from './map';
 import SeaWebView from './webview';
 import Personal from './personal/index';
 
@@ -25,9 +24,14 @@ export default class IndexTabs extends Component {
 		componentDidMount(){
 
 		}
-		onButtonPress(){
-		    Actions.listview()
-		}
+    onSelect( el ){
+      let { name } = el.props;
+      if( name == 3){
+        Actions.map();
+      }else{
+        this.setState({page: name})
+      }
+    }
 	  render() {
       let { page } = this.state,
           self = this,
@@ -40,7 +44,7 @@ export default class IndexTabs extends Component {
           container_view = <ListView/>;
           break;
         case 3:
-          container_view = <Map/>;
+          container_view = <Text>{this.state.page}</Text>;
           break;
         case 4:
             container_view = <Test/>;
@@ -55,7 +59,7 @@ export default class IndexTabs extends Component {
         <View style={styles.container}>
           <Tabs selected={this.state.page}
                 style={{backgroundColor:'white'}}
-                onSelect={el=>this.setState({page:el.props.name})}>
+                onSelect={el=>this.onSelect(el)}>
               <View name={1}>
                 <Image
                   source={{uri:"https://haiyuexing.oss-cn-shenzhen.aliyuncs.com/pub/attachment/2017/05/08/152b32f8b54242a49e06ed7a4291b78b.jpg"}}

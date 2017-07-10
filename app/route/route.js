@@ -19,6 +19,7 @@ import MyListView from '../containers/listview';
 import RouteList from '../containers/routelist';
 import Scan from '../components/scan';
 import SeaWebView from '../containers/webview';
+import Map from '../containers/map';
 
 
 //登录
@@ -54,24 +55,27 @@ export default class AppRoute extends Component{
         backButtonImage = {require('../img/back_chevron.png')}
         direction = 'horizontal'
         titleStyle = {{color:'#00cfff'}}>
-        <Scene key='root' style={{}} passProps={true} hideNavBar = {false} style = {styles.scenStyle}>
+        <Scene key='root' style={{}} passProps={true} hideNavBar = {false} >
 					<Scene key='indexTabs' component={IndexTabs}
+						style = {styles.scenStyle}
 						title='海约行'
 						hideBackImage={true}
 						initial = {true}
 					/>
-					<Scene key='test' component={Test} title='test'/>
-					<Scene key='login' component={Login} title='登录'  />
-					<Scene key='resetPass' component={ResetPass} title='重置密码'/>
+					<Scene key='test' component={Test} title='test' style = {styles.scenStyle}/>
+					<Scene key='login' component={Login} title='登录'  style = {styles.scenStyle}/>
+					<Scene key='resetPass' component={ResetPass} title='重置密码' style = {styles.scenStyle}/>
           <Scene key='listview' component={RouteList}
+						style = {styles.scenStyle}
 						title='listview'
 						backTitle='back'
             onRight={()=>{console.log(99);}}
             rightButtonImage = {require('../img/menu_burger.png')}
           />
-					<Scene key='mylistview' component={MyListView} title='mylistview' />
-					<Scene key='seawebview' component={SeaWebView} title='' />
-          <Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical'/>
+					<Scene key='mylistview' component={MyListView} title='mylistview' style = {styles.scenStyle}/>
+					<Scene key='seawebview' component={SeaWebView} title='' style = {styles.scenStyle}/>
+					<Scene key='map' component={Map} title='' hideNavBar = {true}/>
+					<Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical' style = {styles.scenStyle}/>
         </Scene>
       </Router>
     )

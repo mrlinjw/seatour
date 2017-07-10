@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   map: {
     width: width,
-    height: height-200,
+    height: height,
     marginBottom: 16
   }
 })
