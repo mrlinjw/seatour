@@ -35,7 +35,7 @@ Tool.fetch = (cmp, url, params, fn_succ) => {
   }
   cmp && cmp.setState({ loading_visible: true })
   return fetch(config.urlPath+url, {
-    method: 'GET',
+    method: 'POST',
     credentials: 'include',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
