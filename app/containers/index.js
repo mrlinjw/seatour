@@ -85,7 +85,7 @@ export default class Index extends Component {
                     style={ styles.businessImg}/>
                   <Text
                     style={ styles.businessText }>
-                    全部
+                    推荐
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.search.bind(this,2)} style={ styles.businessView }>
@@ -104,6 +104,15 @@ export default class Index extends Component {
                   <Text
                     style={ styles.businessText }>
                     海岛游
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.search.bind(this,3)} style={ styles.businessView }>
+                  <Image
+                    source={require('../img/logo.png')}
+                    style={ styles.businessImg}/>
+                  <Text
+                    style={ styles.businessText }>
+                    游艇
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -184,8 +193,9 @@ const styles = StyleSheet.create({
 	    backgroundColor: '#eeeeee',
 	  },
     businessView: {
-      marginLeft: 10,
-      marginRight: 20,
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     businessImg: {
       width: 50,

@@ -27,7 +27,7 @@ export default class Personal extends Component{
           <View>
             <Text>张三 </Text>
             <Text>lv1 </Text>
-            <Text>海钓大师 </Text>
+            <Text>关注：{15}       粉丝：{ 99 }</Text>
           </View>
         </View>
 
@@ -38,11 +38,7 @@ export default class Personal extends Component{
           </View>
           <View>
             <Text style={styles.statisticsText}>2</Text>
-            <Text style={styles.statisticsText}>关注</Text>
-          </View>
-          <View>
-            <Text style={styles.statisticsText}>3</Text>
-            <Text style={styles.statisticsText}>粉丝</Text>
+            <Text style={styles.statisticsText}>我的活动</Text>
           </View>
           <View>
             <Text style={styles.statisticsText}>199987</Text>

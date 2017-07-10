@@ -18,10 +18,20 @@ export default class SeaWebView extends Component{
 	componentWillMount(){
 
 	}
+	/**
+	 * title： 为H5页面的title
+	 */
+	onMessage( even ){
+		let title = even.nativeEvent.title || '海约';
+		Actions.refresh({
+				title: title
+		});
+	}
 	render(){
 		return(
 			<WebView
-				source={{uri:'http://wechat.gotosea.com.cn/WeChat/lineList/1'}}
+				onMessage = { this.onMessage.bind(this) }
+				source={{uri: this.props.url}}
 			/>
 
 		)

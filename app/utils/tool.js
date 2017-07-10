@@ -146,10 +146,14 @@ Tool.uploadImage = (cmp, callback) => {
   });
 }
 
+/**
+ *接收参数： this.props.KEY_NAME
+ */
 Tool.to = (key, params) => {
   let routeAction = Actions[key];
   routeAction(params);
 }
+
 Tool.back = () => {
   Actions.pop();
 }

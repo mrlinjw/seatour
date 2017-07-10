@@ -4,15 +4,16 @@ if(__DEV__){
   config = {
     version: 1.0,
     urlPath: 'http://192.168.0.117:8080/fishsea/',
+    pagePath: 'http://192.168.0.117/seatourpage/',
     wechatAppID: 'wx6ce431662d339a23'
   }
 }else{
   config = {
     version: 1.0,
     urlPath: 'http://www.gotosea.com.cn/fishsea/',
+    pagePath: 'http://www.gotosea.com.cn/seatourpage/',
     wechatAppID: 'wx6ce431662d339a23'
   }
 }
-
-
+global.config = config;
 export default config;

@@ -70,7 +70,7 @@ export default class AppRoute extends Component{
             rightButtonImage = {require('../img/menu_burger.png')}
           />
 					<Scene key='mylistview' component={MyListView} title='mylistview' />
-					<Scene key='seawebview' component={SeaWebView} title='h5页面' />
+					<Scene key='seawebview' component={SeaWebView} title='' />
           <Scene key='scan' component={Scan} title='二维码/条码' direction = 'vertical'/>
         </Scene>
       </Router>
