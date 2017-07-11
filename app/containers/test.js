@@ -162,7 +162,7 @@ export default class Test extends Component {
               routelist
               </MyButton>
               <MyButton
-  	          	onPress={ ()=>{ Tool.to('seawebview', {url: config.pagePath+'lineList'}) } }
+  	          	onPress={ ()=>{ Tool.to('seawebview', {url: config.pagePath+'lineList', title:'列表'}) } }
                 type = {2}
   	          >
               webview
