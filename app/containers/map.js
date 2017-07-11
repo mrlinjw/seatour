@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import{
+  Platform,
   StyleSheet,
   Dimensions,
   View,
@@ -51,6 +52,12 @@ export default class Map extends Component{
   render(){
     return(
       <View style={styles.container}>
+        <View style={ [styles.top, styles.floatView ] }>
+          <Text onPress={ ()=>Tool.back()}>back</Text>
+        </View>
+        <View style={ [styles.bottom, styles.floatView ]}>
+          <Text>bottom</Text>
+        </View>
         <MapView
           trafficEnabled={this.state.trafficEnabled}
           baiduHeatMapEnabled={this.state.baiduHeatMapEnabled}
@@ -67,12 +74,6 @@ export default class Map extends Component{
             //alert('map click')
           }}
         >
-        <View style={ [styles.top, styles.floatView ] }>
-          <Text onPress={ ()=>Tool.back()}>back</Text>
-        </View>
-        <View style={ [styles.bottom, styles.floatView ]}>
-          <Text>bottom</Text>
-        </View>
         </MapView>
       </View>
     )
@@ -82,18 +83,19 @@ export default class Map extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   map: {
+    zIndex: 1,
     width: width,
-    height: height,
+    height: Platform.OS == 'ios' ? height : height - 22 ,
     marginBottom: 16
   },
   floatView: {
-    position: 'relative',
+    position: 'absolute',
+    zIndex: 2,
     backgroundColor: '#fff',
     width: width - 60,
     height: 50,
@@ -103,9 +105,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   top: {
-    marginTop: 30,
+    marginTop: 20,
   },
   bottom: {
-    marginTop: height - 130,
+    bottom: 15,
   }
 })
