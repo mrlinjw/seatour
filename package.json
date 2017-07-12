@@ -10,7 +10,7 @@
     "apsl-react-native-button": "^3.0.2",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.0",
-    "react-native-baidu-map": "^0.6.0",
+    "react-native-baidu-map": "git+https://github.com/mrlinjw/react-native-baidu-map.git",
     "react-native-calendars": "^1.2.16",
     "react-native-camera": "^0.9.4",
     "react-native-htmlview": "^0.9.0",
